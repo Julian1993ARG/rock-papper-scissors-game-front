@@ -14,9 +14,6 @@ const PlayerTwo = ({ result }) => {
   const rockHand = useRef();
   const { room, player_2 } = useContext(SocketContext);
 
-  const url = process.env.REACT_APP_VERCEL_URL;
-  console.log(url)
-
   useEffect(() => {
     if (result.show) {
       setOption(room.players[player_2].option);
