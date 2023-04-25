@@ -14,6 +14,9 @@ const PlayerTwo = ({ result }) => {
   const rockHand = useRef();
   const { room, player_2 } = useContext(SocketContext);
 
+  const url = process.env.REACT_APP_VERCEL_URL;
+  console.log(url)
+
   useEffect(() => {
     if (result.show) {
       setOption(room.players[player_2].option);
@@ -31,7 +34,7 @@ const PlayerTwo = ({ result }) => {
     <div className={styles.container}>
       {!player_2 && room.type === "friend" && (
         <JoinLink
-          link={`${process.env.VERCEL_URL || 'http://localhost:3000/'}room/${room.roomId}`}
+          link={`${process.env.REACT_APP_VERCEL_URL || 'http://localhost:3000/'}room/${room.roomId}`}
         />
       )}
       {!player_2 && (
